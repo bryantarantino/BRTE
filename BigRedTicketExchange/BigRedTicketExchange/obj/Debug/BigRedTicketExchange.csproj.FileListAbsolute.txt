@@ -108,3 +108,5 @@ C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\bin\Microsoft
 C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.csprojResolveAssemblyReference.cache
 C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.dll
 C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.pdb
+C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.Migrations.InitialCreate.resources
+C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.csproj.GenerateResource.Cache

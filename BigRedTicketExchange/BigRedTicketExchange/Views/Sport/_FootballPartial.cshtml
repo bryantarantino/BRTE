@@ -1,0 +1,16 @@
+﻿@model BigRedTicketExchange.Models.Sport
+
+<div class="body-content">
+    <table class="table table-hover">
+        @foreach (var game in Model.Games)
+        {
+            <tr>
+                <td>
+                    @game.Opponent
+                </td>
+            </tr>
+        }
+    </table>
+
+
+</div>

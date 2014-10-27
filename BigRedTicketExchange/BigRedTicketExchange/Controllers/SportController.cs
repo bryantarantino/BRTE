@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BigRedTicketExchange.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,27 +7,32 @@ using System.Web.Mvc;
 
 namespace BigRedTicketExchange.Controllers
 {
-    public class MBasketballController : Controller
+    public class SportController : Controller
     {
-        // GET: MBasketball
-        public ActionResult Index()
+        // GET: Sport
+        public ActionResult FootballIndex()
         {
-            return View();
+            Sport football = new Sport();
+            using (var db = new BrteDBContext())
+            {
+                football = db.Sports.Where(x => x.Name == "Football").Single();
+            }
+            return View(football);
         }
 
-        // GET: MBasketball/Details/5
+        // GET: Sport/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: MBasketball/Create
+        // GET: Sport/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: MBasketball/Create
+        // POST: Sport/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -42,13 +48,13 @@ namespace BigRedTicketExchange.Controllers
             }
         }
 
-        // GET: MBasketball/Edit/5
+        // GET: Sport/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: MBasketball/Edit/5
+        // POST: Sport/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -64,13 +70,13 @@ namespace BigRedTicketExchange.Controllers
             }
         }
 
-        // GET: MBasketball/Delete/5
+        // GET: Sport/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: MBasketball/Delete/5
+        // POST: Sport/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

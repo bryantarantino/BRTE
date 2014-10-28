@@ -9,13 +9,33 @@
     </div>
     <div class="row">
         <div class="col-sm-4">
-            <button><img src="/Home/FootballButton.PNG"/></button>
+            <button id="footballButton" onclick="showSchedule();"><img src="/Home/FootballButton.PNG"/></button>
         </div>
         <div class="col-sm-4">
-            <button><img src="/Home/BasketballButton.PNG" /></button>
+            <button id="basketballButton"><img src="/Home/BasketballButton.PNG" /></button>
         </div>
         <div class="col-sm-4">
-            <button><img src="/Home/VolleyballButton.PNG"/></button>
+            <button id="volleyballButton"><img src="/Home/VolleyballButton.PNG"/></button>
         </div>
     </div>
+    <button id="inputView">Input</button>
+    <iframe id="sellerIframe" src="/../Home/sellerIframe.html" style="display:none" onclick="showIframe();" width="500" height="500"></iframe>
+    
     </form>
+
+
+<script type="text/javascript">
+
+function showSchedule() {
+    $('#footballSched').toggle();
+};
+
+
+function showIframe() {
+        $('#sellerIframe').show();
+}
+
+function hideIframe() {
+    $('#sellerIframe').hide();
+}
+</script>

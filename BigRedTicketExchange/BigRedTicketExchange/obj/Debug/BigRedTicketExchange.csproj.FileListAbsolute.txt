@@ -108,7 +108,6 @@ C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\bin\Microsoft
 C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.csprojResolveAssemblyReference.cache
 C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.dll
 C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.pdb
-<<<<<<< HEAD
 C:\Users\Derek\Documents\BRTE\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.csprojResolveAssemblyReference.cache
 C:\Users\Derek\Documents\BRTE\BigRedTicketExchange\BigRedTicketExchange\bin\BigRedTicketExchange.dll.config
 C:\Users\Derek\Documents\BRTE\BigRedTicketExchange\BigRedTicketExchange\bin\BigRedTicketExchange.dll
@@ -167,4 +166,3 @@ C:\Users\Derek\Documents\BRTE\BigRedTicketExchange\BigRedTicketExchange\obj\Debu
 =======
 C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.Migrations.InitialCreate.resources
 C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.csproj.GenerateResource.Cache
->>>>>>> c38513e96aef6fba527bc318112856cb2fb0be45

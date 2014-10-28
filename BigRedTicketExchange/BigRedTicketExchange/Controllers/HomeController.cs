@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BigRedTicketExchange.Models;
 
 namespace BigRedTicketExchange.Controllers
 {
@@ -10,7 +11,24 @@ namespace BigRedTicketExchange.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            HomeIndexViewModel HIModel = new HomeIndexViewModel();
+            using(var db = new BrteDBContext())
+            {
+                HIModel.Sports.Add(db.Sports.Where(x => x.Name == "Football").Single());
+                //HIModel.Sports.Add(db.Sports.Where(x => x.Name == "Volleyball").Single());
+                //HIModel.Sports.Add(db.Sports.Where(x => x.Name == "Men's Basketball").Single());
+
+                foreach (var sport in HIModel.Sports)
+                {
+                    foreach (var game in sport.Games)
+                    {
+
+                    }
+                }
+
+            }
+
+            return View(HIModel);
         }
 
         public ActionResult About()

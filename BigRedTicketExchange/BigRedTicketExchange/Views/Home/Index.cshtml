@@ -19,19 +19,43 @@
             </div>
     </div>
     <div class="col-sm-4">
-        <button>Men's Basketball</button>
+        <button><img src="/Home/BasketballButton.PNG" /></button>
     </div>
     <div class="col-sm-4">
-        <button>Volleyball</button>
+        <button><img src="/Home/VolleyballButton.PNG" /></button>
     </div>
 </div>
 
 
 <script type="text/javascript">
-$(function () {
+    $(function () {
     $('#footballbutton').click(function () {
   $('#sched').toggle();
 
 });
 });
+$(function () {
+    $('#sellticket').click(function () {
+        $(userinfomodal).modal('show');
+    });
+});
 </script>
+
+
+<div class="modal fade" id="userinfomodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">&times;</a>
+                <h3>Input User Info</h3>
+            </div>
+            <div class="modal-body">
+                <p>Body of the form</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">Close</a>
+                <a href="#" class="btn btn-primary">Save Changes</a>
+            </div>
+        </div>
+    </div>
+</div>

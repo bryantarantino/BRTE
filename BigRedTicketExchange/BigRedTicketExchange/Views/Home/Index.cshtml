@@ -13,8 +13,10 @@
 </div>
 <div class="row">
     <div class="col-sm-4">
-        <button>Football</button>
+        <button id="footballbutton" ><img src="/Home/FootballButton.PNG" /></button>
+        <div id="sched" style="display: none;">
         @Html.Partial("~/Views/Sport/_FootballPartial.cshtml", Football)
+            </div>
     </div>
     <div class="col-sm-4">
         <button>Men's Basketball</button>
@@ -23,3 +25,13 @@
         <button>Volleyball</button>
     </div>
 </div>
+
+
+<script type="text/javascript">
+$(function () {
+    $('#footballbutton').click(function () {
+  $('#sched').toggle();
+
+});
+});
+</script>

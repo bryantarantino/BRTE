@@ -105,7 +105,6 @@ C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\bin\Microsoft
 C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.csprojResolveAssemblyReference.cache
 C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.dll
 C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.pdb
 C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\bin\MySql.Data.dll
@@ -113,3 +112,7 @@ C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\bin\MyS
 C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\bin\MySql.Web.dll
 C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.Migrations.InitialCreate.resources
 C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.csproj.GenerateResource.Cache
+C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\bin\MySql.Data.dll
+C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\bin\MySql.Data.Entity.EF6.dll
+C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.Migrations.InitialCreate.resources
+C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.csproj.GenerateResource.Cache

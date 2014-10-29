@@ -1,5 +1,6 @@
 ﻿@model BigRedTicketExchange.Models.HomeIndexViewModel
 @using BigRedTicketExchange.Models
+@using Microsoft.AspNet.Identity
 
 @{
     ViewBag.Title = "Home Page";
@@ -35,6 +36,8 @@
     </div>
 </div>
 
+@if(User.Identity.IsAuthenticated == true)
+{ 
 
 <script type="text/javascript">
     $(function () {
@@ -63,6 +66,38 @@
         });
     });
 </script>
+}
+else
+{
+    <script type="text/javascript">
+        $(function () {
+            $('#footballbutton').click(function () {
+                $('#fsched').toggle();
+
+            });
+            $('#volleyballbutton').click(function () {
+                $('#vsched').toggle();
+
+            });
+            $('#basketballbutton').click(function () {
+                $('#bsched').toggle();
+
+            });
+        });
+        $(function () {
+            $('#fsellticket').click(function () {
+                window.location.href = "/Account/Login/"
+                $(userinfomodal).modal('show');
+            });
+            $('#vsellticket').click(function () {
+                window.location.href = "/Account/Login/"
+            });
+            $('#bsellticket').click(function () {
+                window.location.href = "/Account/Login/"
+            });
+        });
+    </script>
+}
 
 
 <div class="modal fade" id="userinfomodal">

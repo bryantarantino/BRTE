@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BigRedTicketExchange.Models;
+using Microsoft.AspNet.Identity;
 
 namespace BigRedTicketExchange.Controllers
 {
@@ -34,6 +35,10 @@ namespace BigRedTicketExchange.Controllers
                     }
                 }
 
+            }
+            using (var db = new ApplicationDbContext())
+            {
+                HIModel.User = db.Users.Where(x => x.UserName == User.Identity.GetUserName()).Single();
             }
 
             return View(HIModel);

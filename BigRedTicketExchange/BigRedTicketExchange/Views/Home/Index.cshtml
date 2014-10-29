@@ -4,41 +4,53 @@
 @{
     ViewBag.Title = "Home Page";
     Sport Football = Model.Sports.Where(x => x.Name == "Football").Single();
+    Sport Volleyball = Model.Sports.Where(x => x.Name == "Volleyball").Single();
 }
 
 <div class="jumbotron">
     <h1>Big Red Ticket Exchange</h1>
+    <img src="/Home/Banner.PNG" />
     <p class="lead">Connect with buyers and sellers in a streamlined student ticked exhcanged expierience!</p>
 
 </div>
 <div class="row">
     <div class="col-sm-4">
-        <button id="footballbutton" ><img src="/Home/FootballButton.PNG" /></button>
-        <div id="sched" style="display: none;">
-        @Html.Partial("~/Views/Sport/_FootballPartial.cshtml", Football)
-            </div>
+        <button id="footballbutton"><img src="/Home/FootballButton.PNG" /></button>
+        <div id="fsched" style="display: none;">
+            @Html.Partial("~/Views/Sport/_FootballPartial.cshtml", Football)
+        </div>
     </div>
     <div class="col-sm-4">
         <button><img src="/Home/BasketballButton.PNG" /></button>
     </div>
     <div class="col-sm-4">
-        <button><img src="/Home/VolleyballButton.PNG" /></button>
+        <button id="volleyballbutton"><img src="/Home/VolleyballButton.PNG" /></button>
+        <div id="vsched" style="display: none;">
+            @Html.Partial("~/Views/Sport/_VolleyballPartial.cshtml", Volleyball)
+        </div>
     </div>
 </div>
 
 
 <script type="text/javascript">
     $(function () {
-    $('#footballbutton').click(function () {
-  $('#sched').toggle();
+        $('#footballbutton').click(function () {
+            $('#fsched').toggle();
 
-});
-});
-$(function () {
-    $('#sellticket').click(function () {
-        $(userinfomodal).modal('show');
+        });
+        $('#volleyballbutton').click(function () {
+            $('#vsched').toggle();
+
+        });
     });
-});
+    $(function () {
+        $('#fsellticket').click(function () {
+            $(userinfomodal).modal('show');
+        });
+        $('#vsellticket').click(function () {
+            $(userinfomodal).modal('show');
+        });
+    });
 </script>
 
 
@@ -50,7 +62,7 @@ $(function () {
                 <h3>Input User Info</h3>
             </div>
             <div class="modal-body">
-                <p>Body of the form</p>
+                <p>First Name: <input id="firstName" /> Last Name: <input id="lastName" /></p>
             </div>
             <div class="modal-footer">
                 <a href="#" class="btn" data-dismiss="modal">Close</a>

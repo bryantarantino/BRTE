@@ -264,6 +264,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Sport\_FootballPartial.cshtml" />
     <Content Include="Views\Home\sellerIframe.cshtml" />
+    <Content Include="Views\Sport\_VolleyballPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

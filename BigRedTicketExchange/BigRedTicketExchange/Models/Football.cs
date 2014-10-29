@@ -53,33 +53,33 @@ namespace BigRedTicketExchange.Models
         public bool IsAvailable { get; set; }
 
     }
-    public class User
-    {
-        public User()
-        {
-            Tickets = new List<Ticket>();
-        }
+    //public class User
+    //{
+    //    public User()
+    //    {
+    //        Tickets = new List<Ticket>();
+    //    }
 
-        public int UserID { get; set; }
+    //    public int UserID { get; set; }
 
-        public string FullName { get; set; }
+    //    public string FullName { get; set; }
 
-        public string Email { get; set; }
+    //    public string Email { get; set; }
 
-        public string PhoneNumber { get; set; }
+    //    public string PhoneNumber { get; set; }
 
-        public bool IsSeller { get; set; }
+    //    public bool IsSeller { get; set; }
 
-        public virtual ICollection<Ticket> Tickets { get; set; }
+    //    public virtual ICollection<Ticket> Tickets { get; set; }
 
-    }
+    //}
 
     public class BrteDBContext : DbContext
 {
         public DbSet<Sport> Sports { get; set; }
         public DbSet<Game> Games { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
-        public DbSet<User> Users { get; set; }
+        //public DbSet<User> Users { get; set; }
 
 }
 }

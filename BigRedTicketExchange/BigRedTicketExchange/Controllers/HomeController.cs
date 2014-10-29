@@ -15,14 +15,22 @@ namespace BigRedTicketExchange.Controllers
             using(var db = new BrteDBContext())
             {
                 HIModel.Sports.Add(db.Sports.Where(x => x.Name == "Football").Single());
-                //HIModel.Sports.Add(db.Sports.Where(x => x.Name == "Volleyball").Single());
+                HIModel.Sports.Add(db.Sports.Where(x => x.Name == "Volleyball").Single());
                 //HIModel.Sports.Add(db.Sports.Where(x => x.Name == "Men's Basketball").Single());
-
+                TimeSpan limitTime = new TimeSpan(3, 0, 0);
                 foreach (var sport in HIModel.Sports)
                 {
                     foreach (var game in sport.Games)
                     {
-
+                        TimeSpan diffTime = game.Date.Subtract(DateTime.Now);
+                        if(TimeSpan.Compare(limitTime, diffTime) < 0)
+                        {
+                            game.IsActive = true;
+                        }
+                        else
+                        {
+                            game.IsActive = false;
+                        }
                     }
                 }
 

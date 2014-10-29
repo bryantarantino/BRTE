@@ -3,6 +3,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BigRedTicketExchange.Models
 {
@@ -16,6 +18,16 @@ namespace BigRedTicketExchange.Models
             // Add custom user claims here
             return userIdentity;
         }
+        public string FullName { get; set; }
+
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+
+        public string PhoneNumber { get; set; }
+
+        public bool IsSeller { get; set; }
+
+        public virtual ICollection<Ticket> Tickets { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

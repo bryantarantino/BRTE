@@ -1,4 +1,4 @@
-namespace BigRedTicketExchange.Migrations
+namespace BigRedTicketExchange.ApplicationMigrations
 {
     using System;
     using System.Data.Entity.Migrations;
@@ -12,8 +12,8 @@ namespace BigRedTicketExchange.Migrations
                 c => new
                     {
                         GameID = c.Int(nullable: false, identity: true),
-                        Date = c.DateTime(nullable: false),
-                        Opponent = c.String(),
+                        Date = c.DateTime(nullable: false, precision: 0),
+                        Opponent = c.String(unicode: false),
                         IsActive = c.Boolean(nullable: false),
                         SportID = c.Int(nullable: false),
                     })
@@ -26,7 +26,7 @@ namespace BigRedTicketExchange.Migrations
                 c => new
                     {
                         SportID = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        Name = c.String(unicode: false),
                     })
                 .PrimaryKey(t => t.SportID);
             
@@ -41,33 +41,16 @@ namespace BigRedTicketExchange.Migrations
                     })
                 .PrimaryKey(t => t.TicketID)
                 .ForeignKey("dbo.Games", t => t.GameID, cascadeDelete: true)
-                .ForeignKey("dbo.Users", t => t.UserID, cascadeDelete: true)
-                .Index(t => t.GameID)
-                .Index(t => t.UserID);
-            
-            CreateTable(
-                "dbo.Users",
-                c => new
-                    {
-                        UserID = c.Int(nullable: false, identity: true),
-                        FullName = c.String(),
-                        Email = c.String(),
-                        PhoneNumber = c.String(),
-                        IsSeller = c.Boolean(nullable: false),
-                    })
-                .PrimaryKey(t => t.UserID);
+                .Index(t => t.GameID);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Tickets", "UserID", "dbo.Users");
             DropForeignKey("dbo.Tickets", "GameID", "dbo.Games");
             DropForeignKey("dbo.Games", "SportID", "dbo.Sports");
-            DropIndex("dbo.Tickets", new[] { "UserID" });
             DropIndex("dbo.Tickets", new[] { "GameID" });
             DropIndex("dbo.Games", new[] { "SportID" });
-            DropTable("dbo.Users");
             DropTable("dbo.Tickets");
             DropTable("dbo.Sports");
             DropTable("dbo.Games");

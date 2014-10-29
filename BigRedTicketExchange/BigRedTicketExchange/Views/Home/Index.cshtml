@@ -7,6 +7,7 @@
     Sport Football = Model.Sports.Where(x => x.Name == "Football").Single();
     Sport Volleyball = Model.Sports.Where(x => x.Name == "Volleyball").Single();
     Sport Basketball = Model.Sports.Where(x => x.Name == "Basketball").Single();
+    ApplicationUser AppUser = Model.User;
 }
 
 <div class="jumbotron">
@@ -37,34 +38,38 @@
 </div>
 
 
-@if (User.Identity.IsAuthenticated == true) { 
-<script type="text/javascript">
-    $(function () {
-        $('#footballbutton').click(function () {
-            $('#fsched').toggle();
+@if (User.Identity.IsAuthenticated == true)
+{
+    <script type="text/javascript">
+        $(function () {
+            $('#footballbutton').click(function () {
+                $('#fsched').toggle();
+
+            });
+            $('#volleyballbutton').click(function () {
+                $('#vsched').toggle();
+
+            });
+            $('#basketballbutton').click(function () {
+                $('#bsched').toggle();
+
+            });
+        });
+        $(function () {
+            $('#fsellticket').click(function () {
+                $(userinfomodal).modal('show');
+            });
+            $('#vsellticket').click(function () {
+                $(userinfomodal).modal('show');
+            });
+            $('#bsellticket').click(function () {
+                $(userinfomodal).modal('show');
+            });
+        });
+        $(function () {
 
         });
-        $('#volleyballbutton').click(function () {
-            $('#vsched').toggle();
-
-        });
-        $('#basketballbutton').click(function () {
-            $('#bsched').toggle();
-
-        });
-    });
-    $(function () {
-        $('#fsellticket').click(function () {
-            $(userinfomodal).modal('show');
-        });
-        $('#vsellticket').click(function () {
-            $(userinfomodal).modal('show');
-        });
-        $('#bsellticket').click(function () {
-            $(userinfomodal).modal('show');
-        });
-    });
-</script>
+    </script>
 }
 else
 {
@@ -107,7 +112,24 @@ else
                 <h3>Input User Info</h3>
             </div>
             <div class="modal-body">
-                <p>First Name: <input id="firstName" /> Last Name: <input id="lastName" /></p>
+                @using (Html.BeginForm(new { user = Model.User}))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.User.FullName, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.User.FullName)
+                            @Html.ValidationMessageFor(model => model.User.FullName)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.User.PhoneNumber, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.User.PhoneNumber)
+                            @Html.ValidationMessageFor(model => model.User.PhoneNumber)
+                        </div>
+                    </div>
+                }
             </div>
             <div class="modal-footer">
                 <a href="#" class="btn" data-dismiss="modal">Close</a>

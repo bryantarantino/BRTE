@@ -118,3 +118,4 @@ C:\Users\Bryan\BRTE\BRTE\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\Big
 C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.ApplicationMigrations.InitialCreate.resources
 C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.csproj.GenerateResource.Cache
 C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.UserMigrations.InitialCreate.resources
+C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.ApplicationMigrations.TicketForeignKey.resources

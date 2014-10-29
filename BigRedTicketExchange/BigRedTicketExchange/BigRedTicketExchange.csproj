@@ -172,6 +172,10 @@
     <Compile Include="ApplicationMigrations\201410290136027_InitialCreate.Designer.cs">
       <DependentUpon>201410290136027_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApplicationMigrations\201410291906090_TicketForeignKey.cs" />
+    <Compile Include="ApplicationMigrations\201410291906090_TicketForeignKey.Designer.cs">
+      <DependentUpon>201410291906090_TicketForeignKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationMigrations\Configuration.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -282,6 +286,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ApplicationMigrations\201410290136027_InitialCreate.resx">
       <DependentUpon>201410290136027_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationMigrations\201410291906090_TicketForeignKey.resx">
+      <DependentUpon>201410291906090_TicketForeignKey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserMigrations\201410290138442_InitialCreate.resx">
       <DependentUpon>201410290138442_InitialCreate.cs</DependentUpon>

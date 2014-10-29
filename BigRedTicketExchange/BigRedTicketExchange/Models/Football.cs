@@ -48,7 +48,7 @@ namespace BigRedTicketExchange.Models
 
         public int GameID { get; set; }
 
-        public int UserID { get; set; }
+        public string UserID { get; set; }
 
         public bool IsAvailable { get; set; }
 

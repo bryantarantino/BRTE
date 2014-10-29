@@ -40,8 +40,8 @@ namespace BigRedTicketExchange.Controllers
             {
                 using (var db = new ApplicationDbContext())
                 {
-
-                    HIModel.User = db.Users.Where(x => x.UserName == User.Identity.GetUserName()).Single();
+                    string userName = User.Identity.GetUserName();
+                    HIModel.User = db.Users.Where(x => x.UserName == userName).Single();
                 }
             }
 

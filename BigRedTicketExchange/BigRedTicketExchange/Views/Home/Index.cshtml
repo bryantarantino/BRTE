@@ -1,5 +1,6 @@
 ﻿@model BigRedTicketExchange.Models.HomeIndexViewModel
 @using BigRedTicketExchange.Models
+@using Microsoft.AspNet.Identity
 
 @{
     ViewBag.Title = "Home Page";
@@ -35,7 +36,7 @@
     </div>
 </div>
 
-
+@if (User.Identity.IsAuthenticated == true) { 
 <script type="text/javascript">
     $(function () {
         $('#footballbutton').click(function () {
@@ -63,6 +64,7 @@
         });
     });
 </script>
+}
 
 
 <div class="modal fade" id="userinfomodal">

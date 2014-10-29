@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity;
 
 namespace BigRedTicketExchange.Models
 {
@@ -12,6 +13,7 @@ namespace BigRedTicketExchange.Models
             Sports = new List<Sport>();
         }
         public ICollection<Sport> Sports { get; set; }
+        public ApplicationUser User { get; set; }
 
     }
 }

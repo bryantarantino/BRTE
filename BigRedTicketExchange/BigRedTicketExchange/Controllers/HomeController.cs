@@ -16,7 +16,7 @@ namespace BigRedTicketExchange.Controllers
             {
                 HIModel.Sports.Add(db.Sports.Where(x => x.Name == "Football").Single());
                 HIModel.Sports.Add(db.Sports.Where(x => x.Name == "Volleyball").Single());
-                //HIModel.Sports.Add(db.Sports.Where(x => x.Name == "Men's Basketball").Single());
+                HIModel.Sports.Add(db.Sports.Where(x => x.Name == "Basketball").Single());
                 TimeSpan limitTime = new TimeSpan(3, 0, 0);
                 foreach (var sport in HIModel.Sports)
                 {

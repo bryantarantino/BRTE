@@ -5,6 +5,7 @@
     ViewBag.Title = "Home Page";
     Sport Football = Model.Sports.Where(x => x.Name == "Football").Single();
     Sport Volleyball = Model.Sports.Where(x => x.Name == "Volleyball").Single();
+    Sport Basketball = Model.Sports.Where(x => x.Name == "Basketball").Single();
 }
 
 <div class="jumbotron">
@@ -21,7 +22,10 @@
         </div>
     </div>
     <div class="col-sm-4">
-        <button><img src="/Home/BasketballButton.PNG" /></button>
+        <button id="basketballbutton"><img src="/Home/BasketballButton.PNG" /></button>
+        <div id="bsched" style="display: none;">
+            @Html.Partial("~/Views/Sport/_BasketballPartial.cshtml", Basketball)
+        </div>
     </div>
     <div class="col-sm-4">
         <button id="volleyballbutton"><img src="/Home/VolleyballButton.PNG" /></button>
@@ -42,12 +46,19 @@
             $('#vsched').toggle();
 
         });
+        $('#basketballbutton').click(function () {
+            $('#bsched').toggle();
+
+        });
     });
     $(function () {
         $('#fsellticket').click(function () {
             $(userinfomodal).modal('show');
         });
         $('#vsellticket').click(function () {
+            $(userinfomodal).modal('show');
+        });
+        $('#bsellticket').click(function () {
             $(userinfomodal).modal('show');
         });
     });

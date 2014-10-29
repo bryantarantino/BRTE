@@ -1,0 +1,26 @@
+﻿
+@model BigRedTicketExchange.Models.Sport
+
+<div class="body-content">
+    <table class="table table-hover">
+        @foreach (var game in Model.Games)
+        {
+            <tr>
+                <td>
+                    @game.Opponent
+                </td>
+                <td>
+                    @game.Date
+                </td>
+                <td>
+                    @if (game.IsActive == true)
+                    {
+                        <button id="bsellticket">Sell</button>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+
+
+</div>

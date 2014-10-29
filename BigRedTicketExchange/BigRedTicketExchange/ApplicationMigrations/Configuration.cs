@@ -73,6 +73,31 @@ namespace BigRedTicketExchange.ApplicationMigrations
                     new Game { Opponent = "Michigan", Date = new DateTime(2014, 11, 22, 19, 0, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Volleyball").Single() }
                     );
             }
+            if (!context.Sports.Where(x => x.Name == "Basketball").Any())
+            {
+                context.Sports.AddOrUpdate(
+                    new Sport { Name = "Basketball" }
+                    );
+                context.SaveChanges();
+                context.Games.AddOrUpdate(
+                    new Game { Opponent = "Northern Kentucky", Date = new DateTime(2014, 11, 16, 13, 0, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() },
+                    new Game { Opponent = "Central Arkansas", Date = new DateTime(2014, 11, 18, 19, 0, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() },
+                    new Game { Opponent = "Nebraska-Omaha", Date = new DateTime(2014, 11, 25, 19, 0, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() },
+                    new Game { Opponent = "Tennessee Martin", Date = new DateTime(2014, 11, 28, 0, 0, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() },
+                    new Game { Opponent = "Creighton", Date = new DateTime(2014, 12, 7, 18, 0, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() },
+                    new Game { Opponent = "Incarnate Word", Date = new DateTime(2014, 12, 10, 19, 0, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() },
+                    new Game { Opponent = "Cincinnati", Date = new DateTime(2014, 12, 13, 20, 0, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() },
+                    new Game { Opponent = "Indiana", Date = new DateTime(2014, 12, 31, 0, 0, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() },
+                    new Game { Opponent = "Rutgers", Date = new DateTime(2015, 1, 8, 20, 0, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() },
+                    new Game { Opponent = "Illinois", Date = new DateTime(2015, 1, 11, 19, 30, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() },
+                    new Game { Opponent = "Minnesota", Date = new DateTime(2015, 1, 20, 19, 30, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() },
+                    new Game { Opponent = "Michigan State", Date = new DateTime(2015, 1, 24, 0, 0, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() },
+                    new Game { Opponent = "Northwestern", Date = new DateTime(2015, 2, 3, 18, 30, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() },
+                    new Game { Opponent = "Wisconsin", Date = new DateTime(2015, 2, 10, 20, 0, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() },
+                    new Game { Opponent = "Iowa", Date = new DateTime(2015, 2, 22, 0, 0, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() },
+                    new Game { Opponent = "Maryland", Date = new DateTime(2015, 3, 8, 0, 0, 0), IsActive = false, Sport = context.Sports.Where(x => x.Name == "Basketball").Single() }
+                    );
+            }
         }
     }
 }

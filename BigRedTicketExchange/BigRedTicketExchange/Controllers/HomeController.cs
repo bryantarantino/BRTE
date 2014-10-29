@@ -13,7 +13,7 @@ namespace BigRedTicketExchange.Controllers
         public ActionResult Index()
         {
             HomeIndexViewModel HIModel = new HomeIndexViewModel();
-            using(var db = new BrteDBContext())
+            using (var db = new BrteDBContext())
             {
                 HIModel.Sports.Add(db.Sports.Where(x => x.Name == "Football").Single());
                 HIModel.Sports.Add(db.Sports.Where(x => x.Name == "Volleyball").Single());
@@ -24,7 +24,7 @@ namespace BigRedTicketExchange.Controllers
                     foreach (var game in sport.Games)
                     {
                         TimeSpan diffTime = game.Date.Subtract(DateTime.Now);
-                        if(TimeSpan.Compare(limitTime, diffTime) < 0)
+                        if (TimeSpan.Compare(limitTime, diffTime) < 0)
                         {
                             game.IsActive = true;
                         }
@@ -36,9 +36,13 @@ namespace BigRedTicketExchange.Controllers
                 }
 
             }
-            using (var db = new ApplicationDbContext())
+            if (User.Identity.IsAuthenticated)
             {
-                HIModel.User = db.Users.Where(x => x.UserName == User.Identity.GetUserName()).Single();
+                using (var db = new ApplicationDbContext())
+                {
+
+                    HIModel.User = db.Users.Where(x => x.UserName == User.Identity.GetUserName()).Single();
+                }
             }
 
             return View(HIModel);

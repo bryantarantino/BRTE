@@ -7,6 +7,7 @@ using BigRedTicketExchange.Models;
 
 namespace BigRedTicketExchange.Controllers
 {
+    //This is a useful comment
     public class SellerController : Controller
     {
         // GET: Seller

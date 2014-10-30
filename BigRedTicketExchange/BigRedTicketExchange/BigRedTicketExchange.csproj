@@ -183,24 +183,32 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BuyerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SellerController.cs" />
     <Compile Include="Controllers\SportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BuyerViewModel.cs" />
     <Compile Include="Models\Football.cs" />
     <Compile Include="Models\HomeIndexViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MySqlConfiguration.cs" />
     <Compile Include="Models\MySqlHistoryContext.cs" />
+    <Compile Include="Models\UserTicketViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="UserMigrations\201410290138442_InitialCreate.cs" />
     <Compile Include="UserMigrations\201410290138442_InitialCreate.Designer.cs">
       <DependentUpon>201410290138442_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserMigrations\201410291955089_TicketForeignKey.cs" />
+    <Compile Include="UserMigrations\201410291955089_TicketForeignKey.Designer.cs">
+      <DependentUpon>201410291955089_TicketForeignKey.cs</DependentUpon>
     </Compile>
     <Compile Include="UserMigrations\Configuration.cs" />
   </ItemGroup>
@@ -270,6 +278,9 @@
     <Content Include="Views\Home\sellerIframe.cshtml" />
     <Content Include="Views\Sport\_VolleyballPartial.cshtml" />
     <Content Include="Views\Sport\_BasketballPartial.cshtml" />
+    <Content Include="Views\Sport\_TicketPartial.cshtml" />
+    <Content Include="Views\Seller\Index.cshtml" />
+    <Content Include="Views\Buyer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -292,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserMigrations\201410290138442_InitialCreate.resx">
       <DependentUpon>201410290138442_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserMigrations\201410291955089_TicketForeignKey.resx">
+      <DependentUpon>201410291955089_TicketForeignKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

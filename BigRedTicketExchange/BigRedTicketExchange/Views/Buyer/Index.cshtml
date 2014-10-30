@@ -1,0 +1,60 @@
+﻿@model List<BigRedTicketExchange.Models.BuyerViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="body-content">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>
+                    @Html.Encode("Name")
+                </td>
+                <td>
+                    @Html.Encode("Email")
+                </td>
+                <td>
+                    @Html.Encode("Phone Number")
+                </td>
+                <td>
+                    @Html.Encode("Availability")
+                </td>
+            </tr>
+        </thead>
+        @foreach (var buyerview in Model)
+        {
+            <tr>
+                <td>
+                    @buyerview.User.FullName
+                </td>
+                <td>
+                    @buyerview.User.Email
+                </td>
+                <td>
+                    @buyerview.User.PhoneNumber
+                </td>
+                <td>
+                    @if (buyerview.Ticket.IsAvailable == true)
+                    {
+                        @Html.Encode("Ticket Available")
+                    }
+                    else
+                    {
+                        @Html.Encode("Ticket Unavailable")
+                    }
+                </td>
+
+                <td>
+                    @if (buyerview.Ticket.IsAvailable == true)
+                    {
+                        <button id="bsellticket">Contact</button>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+
+
+</div>

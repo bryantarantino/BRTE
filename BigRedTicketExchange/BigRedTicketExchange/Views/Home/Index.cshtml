@@ -2,6 +2,7 @@
 @using BigRedTicketExchange.Models
 @using Microsoft.AspNet.Identity
 
+@Html.Hidden("GameID", "")
 @{
     ViewBag.Title = "Home Page";
     Sport Football = Model.Sports.Where(x => x.Name == "Football").Single();
@@ -14,13 +15,12 @@
     <h1>Big Red Ticket Exchange</h1>
     <img src="/Home/Banner.PNG" />
     <p class="lead">Connect with buyers and sellers in a streamlined student ticked exhcanged expierience!</p>
-
 </div>
 <div class="row">
     <div class="col-sm-4">
         <button id="footballbutton"><img src="/Home/FootballButton.PNG" /></button>
         <div id="fsched" style="display: none;">
-            @Html.Partial("~/Views/Sport/_FootballPartial.cshtml", Football)
+            @Html.Partial("~/Views/Sport/_FootballPartial.cshtml", Model)
         </div>
     </div>
     <div class="col-sm-4">
@@ -104,7 +104,7 @@ else
 }
 
 
-<div class="modal fade" id="userinfomodal">
+@*<div class="modal fade" id="userinfomodal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -112,29 +112,11 @@ else
                 <h3>Input User Info</h3>
             </div>
             <div class="modal-body">
-                @using (Html.BeginForm(new { user = Model.User}))
-                {
-                    @Html.AntiForgeryToken()
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.User.FullName, new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.User.FullName)
-                            @Html.ValidationMessageFor(model => model.User.FullName)
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.User.PhoneNumber, new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.User.PhoneNumber)
-                            @Html.ValidationMessageFor(model => model.User.PhoneNumber)
-                        </div>
-                    </div>
-                }
+                @Html.Partial("~/Views/Sport/_TicketPartial.cshtml", AppUser)
             </div>
             <div class="modal-footer">
                 <a href="#" class="btn" data-dismiss="modal">Close</a>
-                <a href="#" class="btn btn-primary">Save Changes</a>
             </div>
         </div>
     </div>
-</div>
+</div>*@

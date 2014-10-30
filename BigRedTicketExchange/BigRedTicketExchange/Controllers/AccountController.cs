@@ -39,45 +39,7 @@ namespace BigRedTicketExchange.Controllers
             }
         }
 
-        [HttpPost]
-        [Authorize]
-        [ValidateAntiForgeryToken]
-        public ActionResult PostTicket(ApplicationUser user, Game game)
-        {
-            if (!ModelState.IsValid)
-            {
-                return null;
-            }
-            using (var Appdb = new ApplicationDbContext())
-            {
-                var dbUser = Appdb.Users.Where(x => x.Id == user.Id).Single();
-                if (user.PhoneNumber != null)
-                {
-                    dbUser.PhoneNumber = user.PhoneNumber;
-                }
-                if (user.FullName != null)
-                {
-                    dbUser.FullName = user.FullName;
-                }
-                Appdb.SaveChanges();
-                using (var BrteDb = new BrteDBContext())
-                {
-                    var ticket = new Ticket();
-                    ticket.GameID = game.GameID;
-                    ticket.UserID = user.Id;
-                    ticket.IsAvailable = true;
-                    BrteDb.Tickets.Add(ticket);
 
-                    var dbGame = BrteDb.Games.Where(x => x.GameID == game.GameID).Single();
-                    dbGame.Tickets.Add(ticket);
-
-                    dbUser.Tickets.Add(ticket);
-                    BrteDb.SaveChanges();
-                }
-            }
-            return View();
-            
-        }
 
         //
         // GET: /Account/Login

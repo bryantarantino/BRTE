@@ -1,8 +1,9 @@
-﻿@model BigRedTicketExchange.Models.Sport
+﻿@model BigRedTicketExchange.Models.HomeIndexViewModel
+@using Microsoft.AspNet.Identity
 
 <div class="body-content">
     <table class="table table-hover">
-        @foreach (var game in Model.Games)
+        @foreach (var game in Model.Sports.Where(x => x.Name == "Football").Single().Games)
         {
             <tr>
                 <td>
@@ -12,10 +13,36 @@
                     @game.Date
                 </td>
                 <td>
-                    @if(game.IsActive==true){
-                    <button id="fsellticket" onclick="footballticket">Sell</button>
+                    @if (game.IsActive == true && User.Identity.IsAuthenticated == true)
+                    {
+                        using (Html.BeginForm("Index", "Seller", new { userId = Model.User.Id, gameId = game.GameID }, FormMethod.Post, null))
+                        {
+                            @Html.AntiForgeryToken()
+                            <input type="submit" value="Sell" />
+                        }
+                        using (Html.BeginForm("Index", "Buyer", new { gameId = game.GameID }, FormMethod.Post, null))
+                        {
+                            @Html.AntiForgeryToken()
+                            <input type="submit" value="View Tickets" />
+                        }
                     }
+                    else if (game.IsActive == true)
+                    {
+                        <button id="fsellticket">Sell</button>
+                        using (Html.BeginForm("Index", "Buyer", new { gameId = game.GameID }, FormMethod.Post, null))
+                        {
+                            @Html.AntiForgeryToken()
+                            <input type="submit" value="View Tickets" />
+                        }
+                    }
+                    else
+                    {
+
+                    }
+
+
                 </td>
+
             </tr>
         }
     </table>

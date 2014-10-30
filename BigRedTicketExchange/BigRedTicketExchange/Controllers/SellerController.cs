@@ -40,6 +40,7 @@ namespace BigRedTicketExchange.Controllers
             {
                 var user = Appdb.Users.Where(x => x.Id == userId);
                 var dbUser = Appdb.Users.Where(x => x.Id == userId).Single();
+
                 if (model.User.PhoneNumber != null)
                 {
                     dbUser.PhoneNumber = model.User.PhoneNumber;
@@ -51,9 +52,18 @@ namespace BigRedTicketExchange.Controllers
                 Appdb.SaveChanges();
                 using (var BrteDb = new BrteDBContext())
                 {
+                    var game = BrteDb.Games.Where(x => x.GameID == gameId).Single();
+                    foreach(var t in game.Tickets)
+                    {
+                        if (t.UserID == userId)
+                        {
+                            ViewBag.AlerMessage = "You have already Posted a ticket for this game";
+                            return RedirectToAction("Index", "Home", null);
+                        }
+                    }
                     var ticket = new Ticket();
 
-                    var game = BrteDb.Games.Where(x => x.GameID == gameId).Single();
+
                     ticket.GameID = gameId;
                     ticket.UserID = userId;
                     ticket.IsAvailable = true;

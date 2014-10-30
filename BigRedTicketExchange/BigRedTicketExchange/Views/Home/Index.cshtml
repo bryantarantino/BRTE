@@ -4,17 +4,20 @@
 
 @Html.Hidden("GameID", "")
 @{
+
     ViewBag.Title = "Home Page";
     Sport Football = Model.Sports.Where(x => x.Name == "Football").Single();
     Sport Volleyball = Model.Sports.Where(x => x.Name == "Volleyball").Single();
     Sport Basketball = Model.Sports.Where(x => x.Name == "Basketball").Single();
     ApplicationUser AppUser = Model.User;
+
 }
 
 <div class="jumbotron">
     <h1>Big Red Ticket Exchange</h1>
     <img src="/Home/Banner.PNG" />
     <p class="lead">Connect with buyers and sellers in a streamlined student ticked exhcanged expierience!</p>
+    @ViewBag.AlertMessage
 </div>
 <div class="row">
     <div class="col-sm-4">

@@ -99,6 +99,25 @@ namespace BigRedTicketExchange.Controllers
             }
             return View(tickets);
         }
+
+        public ActionResult ToggleAvailability(int id)
+        {
+            using (var db = new BrteDBContext())
+            {
+                var ticket = db.Tickets.Find(id);
+                if (ticket.IsAvailable == true)
+                {
+                    ticket.IsAvailable = false;
+                }
+                else
+                {
+                    ticket.IsAvailable = true;
+                }
+                db.SaveChanges();
+            }
+            return RedirectToAction("Manage", new { id = User.Identity.GetUserId() });
+
+        }
         // GET: Seller/Details/5
         public ActionResult Details(int id)
         {

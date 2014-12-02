@@ -27,6 +27,9 @@
                     @tickets.Ticket.IsAvailable
                 </td>
                 <td>
+                    @Html.ActionLink("Toggle Availability", "ToggleAvailability", new { id = tickets.Ticket.TicketID }, null)
+                </td>
+                <td>
                     @Html.ActionLink("Remove", "Delete", "Seller", new { id = tickets.Ticket.TicketID}, null)
                 </td>
 

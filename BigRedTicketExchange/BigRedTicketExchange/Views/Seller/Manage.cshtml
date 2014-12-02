@@ -1,0 +1,38 @@
+﻿@model List<BigRedTicketExchange.Models.ManageTicketsViewModel>
+
+@{
+    ViewBag.Title = "Manage";
+}
+
+<h2>Manage Tickets</h2>
+<div class="body-content">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>
+                    @Html.Encode("Opponent")
+                </td>
+                <td>
+                    @Html.Encode("Is Available")
+                </td>
+            </tr>
+        </thead>
+        @foreach (var tickets in Model)
+        {
+            <tr>
+                <td>
+                    @tickets.Game.Opponent
+                </td>
+                <td>
+                    @tickets.Ticket.IsAvailable
+                </td>
+                <td>
+                    @Html.ActionLink("Remove", "Delete", "Seller", new { id = tickets.Ticket.TicketID}, null)
+                </td>
+
+            </tr>
+        }
+    </table>
+
+
+</div>

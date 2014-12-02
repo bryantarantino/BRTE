@@ -176,6 +176,10 @@
     <Compile Include="ApplicationMigrations\201410291906090_TicketForeignKey.Designer.cs">
       <DependentUpon>201410291906090_TicketForeignKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApplicationMigrations\201412020208384_TicketVisibility.cs" />
+    <Compile Include="ApplicationMigrations\201412020208384_TicketVisibility.Designer.cs">
+      <DependentUpon>201412020208384_TicketVisibility.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationMigrations\Configuration.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -196,6 +200,7 @@
     <Compile Include="Models\Football.cs" />
     <Compile Include="Models\HomeIndexViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageTicketsViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MySqlConfiguration.cs" />
     <Compile Include="Models\MySqlHistoryContext.cs" />
@@ -209,6 +214,10 @@
     <Compile Include="UserMigrations\201410291955089_TicketForeignKey.cs" />
     <Compile Include="UserMigrations\201410291955089_TicketForeignKey.Designer.cs">
       <DependentUpon>201410291955089_TicketForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserMigrations\201412020249147_TicketVisility.cs" />
+    <Compile Include="UserMigrations\201412020249147_TicketVisility.Designer.cs">
+      <DependentUpon>201412020249147_TicketVisility.cs</DependentUpon>
     </Compile>
     <Compile Include="UserMigrations\Configuration.cs" />
   </ItemGroup>
@@ -281,6 +290,8 @@
     <Content Include="Views\Sport\_TicketPartial.cshtml" />
     <Content Include="Views\Seller\Index.cshtml" />
     <Content Include="Views\Buyer\Index.cshtml" />
+    <Content Include="Views\Seller\Manage.cshtml" />
+    <Content Include="Views\Seller\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -301,11 +312,17 @@
     <EmbeddedResource Include="ApplicationMigrations\201410291906090_TicketForeignKey.resx">
       <DependentUpon>201410291906090_TicketForeignKey.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationMigrations\201412020208384_TicketVisibility.resx">
+      <DependentUpon>201412020208384_TicketVisibility.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserMigrations\201410290138442_InitialCreate.resx">
       <DependentUpon>201410290138442_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserMigrations\201410291955089_TicketForeignKey.resx">
       <DependentUpon>201410291955089_TicketForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserMigrations\201412020249147_TicketVisility.resx">
+      <DependentUpon>201412020249147_TicketVisility.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

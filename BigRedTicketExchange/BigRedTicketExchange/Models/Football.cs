@@ -52,6 +52,8 @@ namespace BigRedTicketExchange.Models
 
         public bool IsAvailable { get; set; }
 
+        public bool Visible { get; set; }
+
     }
     //public class User
     //{

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BigRedTicketExchange.Models;
+using System.Net;
+using Microsoft.AspNet.Identity;
 
 namespace BigRedTicketExchange.Controllers
 {
@@ -56,7 +58,7 @@ namespace BigRedTicketExchange.Controllers
                     var game = BrteDb.Games.Where(x => x.GameID == gameId).Single();
                     foreach(var t in game.Tickets)
                     {
-                        if (t.UserID == userId)
+                        if (t.UserID == userId && t.Visible == true)
                         {
                             ViewBag.AlerMessage = "You have already Posted a ticket for this game";
                             return RedirectToAction("Index", "Home", null);
@@ -68,6 +70,7 @@ namespace BigRedTicketExchange.Controllers
                     ticket.GameID = gameId;
                     ticket.UserID = userId;
                     ticket.IsAvailable = true;
+                    ticket.Visible = true;
                     BrteDb.Tickets.Add(ticket);
 
                     var dbGame = BrteDb.Games.Where(x => x.GameID == game.GameID).Single();
@@ -79,6 +82,22 @@ namespace BigRedTicketExchange.Controllers
             }
             return RedirectToAction("Index", "Home", null);
 
+        }
+        public ActionResult Manage(string id)
+        {
+            List<ManageTicketsViewModel> tickets = new List<ManageTicketsViewModel>();
+            using(var db = new BrteDBContext()){
+                var usertickets = db.Tickets.Where(x => x.UserID == id && x.Visible == true).ToList();
+                foreach (var userticket in usertickets)
+                {
+                    ManageTicketsViewModel ticket = new ManageTicketsViewModel();
+                    ticket.Ticket = userticket;
+                    ticket.Game = db.Games.Where(x => x.GameID == userticket.GameID).Single();
+                    tickets.Add(ticket);
+
+                }
+            }
+            return View(tickets);
         }
         // GET: Seller/Details/5
         public ActionResult Details(int id)
@@ -133,7 +152,27 @@ namespace BigRedTicketExchange.Controllers
         // GET: Seller/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ManageTicketsViewModel userticket = new ManageTicketsViewModel();
+            Ticket ticket;
+            Game game;
+            using (var db = new BrteDBContext())
+            {
+                ticket = db.Tickets.Find(id);
+                game = db.Games.Where(x => x.GameID == ticket.GameID).Single();
+            }
+            if (ticket == null || game == null)
+            {
+                return HttpNotFound();
+            }
+            userticket.Ticket = ticket;
+            userticket.Game = game;
+
+            return View(userticket);
         }
 
         // POST: Seller/Delete/5
@@ -142,9 +181,14 @@ namespace BigRedTicketExchange.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                using (var db = new BrteDBContext())
+                {
+                    var ticket = db.Tickets.Where(x => x.TicketID == id).Single();
+                    ticket.Visible = false;
+                    db.SaveChanges();
+                }
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Manage", new {id = User.Identity.GetUserId() });
             }
             catch
             {

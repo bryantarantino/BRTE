@@ -26,10 +26,13 @@ namespace BigRedTicketExchange.Controllers
             using(var db = new ApplicationDbContext()){
             foreach (var ticket in game.Tickets)
             {
-                BuyerViewModel BV = new BuyerViewModel();
-                BV.Ticket = ticket;
-                BV.User = db.Users.Where(x => x.Id == ticket.UserID).Single();
-                BVList.Add(BV);
+                if (ticket.Visible == true)
+                {
+                    BuyerViewModel BV = new BuyerViewModel();
+                    BV.Ticket = ticket;
+                    BV.User = db.Users.Where(x => x.Id == ticket.UserID).Single();
+                    BVList.Add(BV);
+                }
             }
             }
             return View(BVList);

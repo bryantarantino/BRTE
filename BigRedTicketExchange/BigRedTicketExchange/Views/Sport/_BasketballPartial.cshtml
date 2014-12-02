@@ -28,7 +28,7 @@
                     }
                     else if (game.IsActive == true)
                     {
-                        <button id="fsellticket">Sell</button>
+                        <button id="bsellticket" class="bsellticket">Sell</button>
                         using (Html.BeginForm("Index", "Buyer", new { gameId = game.GameID }, FormMethod.Post, null))
                         {
                             @Html.AntiForgeryToken()

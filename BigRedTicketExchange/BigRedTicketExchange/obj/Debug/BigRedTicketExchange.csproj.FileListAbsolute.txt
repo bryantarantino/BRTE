@@ -120,3 +120,5 @@ C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Deb
 C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.UserMigrations.InitialCreate.resources
 C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.ApplicationMigrations.TicketForeignKey.resources
 C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.UserMigrations.TicketForeignKey.resources
+C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.ApplicationMigrations.TicketVisibility.resources
+C:\CSE361\BigRedTicketExchange\BigRedTicketExchange\BigRedTicketExchange\obj\Debug\BigRedTicketExchange.UserMigrations.TicketVisility.resources

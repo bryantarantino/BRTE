@@ -1,4 +1,5 @@
 ﻿@model List<BigRedTicketExchange.Models.BuyerViewModel>
+@using Microsoft.AspNet.Identity
 
 @{
     ViewBag.Title = "Index";
@@ -45,6 +46,12 @@
                         @Html.Encode("Ticket Sold")
                     }
                 </td>
+                @if (User.Identity.GetUserId() == buyerview.Ticket.UserID)
+                {
+                    <td>
+                        @Html.ActionLink("Remove", "Delete", "Seller", new { id = buyerview.Ticket.TicketID}, null)
+                    </td>
+                }
 
             </tr>
         }

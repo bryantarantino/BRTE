@@ -292,6 +292,7 @@
     <Content Include="Views\Buyer\Index.cshtml" />
     <Content Include="Views\Seller\Manage.cshtml" />
     <Content Include="Views\Seller\Delete.cshtml" />
+    <Content Include="Views\Account\TransferInstructions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

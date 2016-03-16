@@ -14,28 +14,32 @@
 }
 
 <div style="margin-top:20px;">
-    <div class="clearfix">
-        <img src="/Home/Banner.PNG"/>
+    <div class="clearfix container">
+        <div id="jumbotron">
+            <img src="/Home/Banner.PNG" />
+        </div>
     </div>
-        <p class="lead">Connect with buyers and sellers in a streamlined student ticket exchange experience!</p>
-        @ViewBag.AlertMessage
+    <p class="lead">Connect with buyers and sellers in a streamlined student ticket exchange experience!</p>
+    @ViewBag.AlertMessage
 
 </div>
 <div class="row">
-    <div class="col-sm-4">
-        <button id="footballbutton"><img src="/Home/FootballButton.PNG" /></button>
+    <div class="col-sm-4 footballDiv">
+        
+        <a href="#" id="footballbutton"><img id="footballImage" src="/Home/FootballButton.PNG" /></a>
+
         <div id="fsched" style="display: none;">
             @Html.Partial("~/Views/Sport/_FootballPartial.cshtml", Model)
         </div>
     </div>
-    <div class="col-sm-4">
-        <button id="basketballbutton"><img src="/Home/BasketballButton.PNG" /></button>
+    <div class="col-sm-4 basketballDiv">
+        <a href="#" id="basketballbutton"><img src="/Home/BasketballButton.PNG" /></a>
         <div id="bsched" style="display: none;">
             @Html.Partial("~/Views/Sport/_BasketballPartial.cshtml", Model)
         </div>
     </div>
-    <div class="col-sm-4">
-        <button id="volleyballbutton"><img src="/Home/VolleyballButton.PNG" /></button>
+    <div class="col-sm-4 volleyballDiv">
+        <a href="#" id="volleyballbutton"><img src="/Home/VolleyballButton.PNG" /></a>
         <div id="vsched" style="display: none;">
             @Html.Partial("~/Views/Sport/_VolleyballPartial.cshtml", Model)
         </div>
@@ -47,16 +51,19 @@
 {
     <script type="text/javascript">
         $(function () {
+
             $('#footballbutton').click(function () {
                 $('#fsched').toggle();
-
+                return false;
             });
             $('#volleyballbutton').click(function () {
                 $('#vsched').toggle();
+                return false
 
             });
             $('#basketballbutton').click(function () {
                 $('#bsched').toggle();
+                return false;
 
             });
         });
@@ -82,15 +89,16 @@ else
         $(function () {
             $('#footballbutton').click(function () {
                 $('#fsched').toggle();
+                return false;
 
             });
             $('#volleyballbutton').click(function () {
                 $('#vsched').toggle();
-
+                return false;
             });
             $('#basketballbutton').click(function () {
                 $('#bsched').toggle();
-
+                return false;
             });
         });
         $(function () {
@@ -107,21 +115,3 @@ else
         });
     </script>
 }
-
-
-@*<div class="modal fade" id="userinfomodal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <a class="close" data-dismiss="modal">&times;</a>
-                    <h3>Input User Info</h3>
-                </div>
-                <div class="modal-body">
-                    @Html.Partial("~/Views/Sport/_TicketPartial.cshtml", AppUser)
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn" data-dismiss="modal">Close</a>
-                </div>
-            </div>
-        </div>
-    </div>*@
